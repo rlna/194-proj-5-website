@@ -41,15 +41,30 @@
 					</div>
 				</div>
 				<h2 >Part A.2: Recover Homographies</h2>
-				<p>
-					I took photos to eventually align. For the purposes of alignment, I made sure each photo overlapped with each other by about 40%.
-				</p>
+				<p>	To recover homographies, I chose 6 corresponding points on each image. </p>
+					<div class="two" align="middle">
+							<section id="two">
+									<img src="images/download.png" width="400px"/>
+							</section>
+							<section id="two">
+									<img src="images/download-1.png" width="400px"/>
+							</section>
+					</div>
 				<h2 >Part A.3: Warp the Images</h2>
 				<p>
-					I took photos to eventually align. For the purposes of alignment, I made sure each photo overlapped with each other by about 40%.
+					I warped the images to each other using the homography matrix recovered in the previous section. In order to later overlay the images, I first placed the images in a bounding box constructed by finding the new coordinates of each warped corner. When warping, I composed the homography matrix with a translation matrix to account for the vertical and horizontal shifts. The image on the left is the warped image.
 				</p>
+				<div class="two" align="middle">
+						<section id="two">
+								<img src="images/download-2.png" width="400px"/>
+						</section>
+						<section id="two">
+								<img src="images/download-3.png" width="400px"/>
+						</section>
+				</div>
 				<h2> Part A.4: Image Rectification</h2>
 				<p>
+					To rectify images, I found a homography matrix using points I wanted to rectify, and the corner points of a frontward facing box. My rectified images are below.
 				</p>
 				<div class="two" align="middle">
 						<section id="two">
@@ -78,11 +93,24 @@
 				</div>
 				<h2 >Part A.5: Blend Images into a Mosaic</h2>
 				<p>
-					I took photos to eventually align. For the purposes of alignment, I made sure each photo overlapped with each other by about 40%.
+					Since the images were already in equally-sized arrays and in corresponding positions, after adjusting their bounding boxes in part 3, I simply took the max value at each point between the two images to blend them together. There was some aliasing in this method, but only because my friend's position altered the background where the photo would have been stitched together. Either way his half-disappearance made for a cool effect. After warping the first image to the second and blending them together, I warped the third image to the blended image and added it as well.
 				</p>
+				<div class="two" align="middle">
+						<section id="two">
+								<img src="images/lol1.jpg" height="200px"/>
+						</section>
+						<section id="two">
+								<img src="images/lol2.jpg" height="200px"/>
+						</section>
+				</div>
+				<div class="two" align="middle">
+					<section id="two">
+							<img src="images/lol3.jpg" width="100%"/>
+					</section>
+					</div>
 				<h2 >Part A.6: What I've Learned</h2>
 				<p>
-					I took photos to eventually align. For the purposes of alignment, I made sure each photo overlapped with each other by about 40%.
+						The coolest thing I learned was how to warp any image to make it look like you are viewing it from a different angle. Using a homography matrix, I learned how to manipulate photos to 'step inside' them, even on a superficial, 2d basis. 
 				</p>
 
 		</div>
